@@ -3,6 +3,9 @@
 import { useState } from 'react';
 
 export default function Home() {
+  // Zidna had state hna bach n3rfo wesh l'menu dial mobile mhloul wla la
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -110,28 +113,65 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <img src="/logo.jpeg" alt="Elitecar Logo" className="h-24" />
+          
+          {/* Menu Desktop */}
           <div className="hidden md:flex items-center gap-8 text-sm">
             <a href="#services" className="hover:text-amber-400 transition-colors">Services</a>
             <a href="#testimonials" className="hover:text-amber-400 transition-colors">Avis</a>
             <a href="#gallery" className="hover:text-amber-400 transition-colors">Galerie</a>
             <a href="#contact" className="hover:text-amber-400 transition-colors">Contact</a>
           </div>
-          <a href="#contact" className="bg-amber-500 hover:bg-amber-600 text-black px-6 py-2 rounded-full text-sm font-semibold transition-colors">
+          
+          <a href="#contact" className="hidden md:inline-block bg-amber-500 hover:bg-amber-600 text-black px-6 py-2 rounded-full text-sm font-semibold transition-colors">
             Réserver
           </a>
+
+          {/* Bouton Hamburger l Mobile */}
+          <button 
+            className="md:hidden text-white p-2 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              // X icone fach kaykon mhloul
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // Hamburger icone fach kaykon msdoud
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* L'Menu dial Mobile li kayhbt (Dropdown) */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-black/95 backdrop-blur-sm border-b border-white/10">
+            <div className="flex flex-col px-6 py-6 space-y-6 text-center text-lg">
+              <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-amber-400 transition-colors">Services</a>
+              <a href="#testimonials" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-amber-400 transition-colors">Avis</a>
+              <a href="#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-amber-400 transition-colors">Galerie</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-amber-400 transition-colors">Contact</a>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-amber-500 hover:bg-amber-600 text-black px-6 py-3 rounded-full font-semibold transition-colors mx-auto inline-block mt-4">
+                Réserver
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black"></div>
         
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <div className="text-amber-400 text-sm tracking-widest mb-4">ATELIER • CASABLANCA</div>
+        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-20">
+          <div className="text-amber-400 text-sm tracking-widest mb-4">Elitecar • Casablan</div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             La protection absolue<br />
             <span className="text-amber-400">pour votre véhicule d'exception</span>
@@ -156,6 +196,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* L'Équipe / Atelier Section */}
+      <section className="py-24 px-6 bg-black border-t border-white/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Notre Équipe en Action</h2>
+              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+                Derrière chaque véhicule protégé se cache une équipe de passionnés. Nous mettons notre expertise et notre minutie au service de votre voiture pour un résultat irréprochable.
+              </p>
+              <ul className="space-y-4 text-gray-300">
+                <li className="flex items-center gap-3">
+                  <span className="text-amber-400 text-xl">✓</span> Plus de 5 ans d'expertise
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-amber-400 text-xl">✓</span> Matériel de pointe
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="text-amber-400 text-xl">✓</span> Finitions au millimètre
+                </li>
+              </ul>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                <img 
+                  src="/haimeur.jpeg" 
+                  alt="Équipe Elitecar" 
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-24 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
@@ -165,23 +239,13 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 justify-center">
-            {/* PPF */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400 transition-colors">
-              <div className="text-amber-400 text-3xl mb-4">🛡️</div>
-              <h3 className="text-2xl font-bold mb-4">Paint Protection Film</h3>
-              <p className="text-gray-400 mb-6">Protection invisible pour votre peinture. Garantie jusqu'à 10 ans.</p>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>• PPF extérieur</li>
-                <li>• PPF intérieur</li>
-                <li>• PPF mat & satiné</li>
-                <li>• PPF couleur</li>
-              </ul>
-            </div>
-
             {/* Covering */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400 transition-colors">
               <div className="text-amber-400 text-3xl mb-4">🎨</div>
               <h3 className="text-2xl font-bold mb-4">Covering & Wraps</h3>
+               <p className="text-amber-400 font-bold text-lg mb-4">
+    À partir de 5500 DH
+  </p>
               <p className="text-gray-400 mb-6">Transformez l'apparence de votre véhicule avec +300 couleurs.</p>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>• Covering économique</li>
@@ -191,7 +255,21 @@ export default function Home() {
               </ul>
             </div>
 
-            
+            {/* PPF */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400 transition-colors">
+              <div className="text-amber-400 text-3xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-bold mb-4">(PPF) Paint Protection Film</h3>
+              <p className="text-amber-400 font-bold text-lg mb-4">
+    À partir de 17000 DH
+  </p>
+              <p className="text-gray-400 mb-6">Protection invisible pour votre peinture. Garantie jusqu'à 10 ans.</p>
+              <ul className="space-y-2 text-sm text-gray-300">
+                <li>• PPF extérieur</li>
+                <li>• PPF intérieur</li>
+                <li>• PPF mat & satiné</li>
+                <li>• PPF couleur</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -379,7 +457,6 @@ export default function Home() {
               </svg>
               WhatsApp
             </a>
-            
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
@@ -547,7 +624,7 @@ export default function Home() {
             <div>
               <img src="/logo.jpeg" alt="Elitecar Logo" className="h-24 mb-4" />
               <p className="text-gray-400 text-sm">
-                Protection PPF, covering et detailing haut de gamme pour véhicules d'exception à Casablanca.
+                Protection PPF et covering  haut de gamme pour véhicules d'exception à Casablanca.
               </p>
             </div>
             <div>
@@ -555,7 +632,6 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="#services" className="hover:text-amber-400 transition-colors">PPF</a></li>
                 <li><a href="#services" className="hover:text-amber-400 transition-colors">Covering</a></li>
-                <li><a href="#services" className="hover:text-amber-400 transition-colors">Detailing</a></li>
               </ul>
             </div>
             <div>

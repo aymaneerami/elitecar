@@ -171,7 +171,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black"></div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto mt-20">
-          <div className="text-amber-400 text-sm tracking-widest mb-4">Elitecar • Casablan</div>
+          <div className="text-amber-400 text-sm tracking-widest mb-4">Elitecar • Casablanca</div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             La protection absolue<br />
             <span className="text-amber-400">pour votre véhicule d'exception</span>

@@ -196,39 +196,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* L'Équipe / Atelier Section */}
-      <section className="py-24 px-6 bg-black border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Notre Équipe en Action</h2>
-              <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                Derrière chaque véhicule protégé se cache une équipe de passionnés. Nous mettons notre expertise et notre minutie au service de votre voiture pour un résultat irréprochable.
-              </p>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-center gap-3">
-                  <span className="text-amber-400 text-xl">✓</span> Plus de 5 ans d'expertise
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-amber-400 text-xl">✓</span> Matériel de pointe
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="text-amber-400 text-xl">✓</span> Finitions au millimètre
-                </li>
-              </ul>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <img 
-                  src="/haimeur.jpeg" 
-                  alt="Équipe Elitecar" 
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section id="services" className="py-24 px-6 bg-black">

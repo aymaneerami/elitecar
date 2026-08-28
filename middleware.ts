@@ -14,9 +14,9 @@ export function middleware(request: NextRequest) {
   
   // Content Security Policy
   response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.resend.com; frame-src 'self' https://www.google.com;"
-  );
+  'Content-Security-Policy',
+  "default-src 'self' data: blob: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://connect.facebook.net https://hdbtop.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob: https://www.facebook.com; connect-src 'self' https://api.resend.com https://www.facebook.com https://connect.facebook.net https://hdbtop.com; frame-src 'self' https://www.google.com;"
+);
 
   return response;
 }

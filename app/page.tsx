@@ -616,11 +616,11 @@ export default function Home() {
       </footer>
 
       {/* Kadam Ad Container */}
-      <div className="aftegu450621"></div>
+      <div className="bgcnpa450621"></div>
 
-      {/* Next.js Optimized Script Injection */}
+      {/* Next.js Script Injection for New Kadam Ad Code */}
       <Script 
-        src="https://hdbtop.com/code/aftegu450621" 
+        src="https://hdbtop.com/code/bgcnpa450621" 
         strategy="afterInteractive" 
       />
 

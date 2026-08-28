@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import Script from 'next/script';
 
 export default function Home() {
-  // Zidna had state hna bach n3rfo wesh l'menu dial mobile mhloul wla la
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -113,7 +113,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -137,12 +136,10 @@ export default function Home() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              // X icone fach kaykon mhloul
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              // Hamburger icone fach kaykon msdoud
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -196,14 +193,11 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Services Section */}
       <section id="services" className="py-24 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <meta name="kadam-verification" content="kadam97189acb83aa186e02d1eead971ab550" />
-              Nos Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos Services</h2>
             <p className="text-gray-400 text-lg">Trois métiers, une obsession : votre voiture</p>
           </div>
 
@@ -212,9 +206,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400 transition-colors">
               <div className="text-amber-400 text-3xl mb-4">🎨</div>
               <h3 className="text-2xl font-bold mb-4">Covering & Wraps</h3>
-               <p className="text-amber-400 font-bold text-lg mb-4">
-    À partir de 5500 DH
-  </p>
+              <p className="text-amber-400 font-bold text-lg mb-4">À partir de 5500 DH</p>
               <p className="text-gray-400 mb-6">Transformez l'apparence de votre véhicule avec +300 couleurs.</p>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>• Covering économique</li>
@@ -228,9 +220,7 @@ export default function Home() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-amber-400 transition-colors">
               <div className="text-amber-400 text-3xl mb-4">🛡️</div>
               <h3 className="text-2xl font-bold mb-4">(PPF) Paint Protection Film</h3>
-              <p className="text-amber-400 font-bold text-lg mb-4">
-    À partir de 17000 DH
-  </p>
+              <p className="text-amber-400 font-bold text-lg mb-4">À partir de 17000 DH</p>
               <p className="text-gray-400 mb-6">Protection invisible pour votre peinture. Garantie jusqu'à 10 ans.</p>
               <ul className="space-y-2 text-sm text-gray-300">
                 <li>• PPF extérieur</li>
@@ -305,7 +295,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-6 text-amber-400">Adresse</h3>
                 <p className="text-gray-300 mb-6">
                   Maroc • Casablanca<br />
-                  Ain chock
+                  Ain chock<br />
                   Elite car
                 </p>
 
@@ -512,7 +502,6 @@ export default function Home() {
                 <option value="citroen" style={{ color: '#000' }}>Citroën</option>
                 <option value="fiat" style={{ color: '#000' }}>Fiat</option>
                 <option value="alfa-romeo" style={{ color: '#000' }}>Alfa Romeo</option>
-                <option value="ferrari" style={{ color: '#000' }}>Ferrari</option>
                 <option value="jeep" style={{ color: '#000' }}>Jeep</option>
                 <option value="ram" style={{ color: '#000' }}>RAM</option>
                 <option value="dodge" style={{ color: '#000' }}>Dodge</option>
@@ -593,7 +582,7 @@ export default function Home() {
             <div>
               <img src="/logo.jpeg" alt="Elitecar Logo" className="h-24 mb-4" />
               <p className="text-gray-400 text-sm">
-                Protection PPF et covering  haut de gamme pour véhicules d'exception à Casablanca.
+                Protection PPF et covering haut de gamme pour véhicules d'exception à Casablanca.
               </p>
             </div>
             <div>
@@ -621,10 +610,19 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
-            &copy; 2024 Elitecar. Tous droits réservés.
+            © 2024 Elitecar. Tous droits réservés.
           </div>
         </div>
       </footer>
+
+      {/* Kadam Ad Container */}
+      <div className="aftegu450621"></div>
+
+      {/* Next.js Optimized Script Injection */}
+      <Script 
+        src="https://hdbtop.com/code/aftegu450621" 
+        strategy="afterInteractive" 
+      />
 
       {/* Floating WhatsApp Button */}
       <a
